@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Sign Up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background:-moz-repeating-linear-gradient();
+            background-image: url("https://cdn130.picsart.com/332935910025201.jpg?to=crop&type=webp&r=1456x919&q=85");
+            background-size:cover;
+            padding:19px;
+            border-radius: 8px;
+            border-style:solid;
+            width: 600px;
+            height: 300px;
+            text-align:center;
+            position: relative;
+            left: 50px;
+            
+          }
+          h2{
+            color:#ffffff;
+          }
+        input {
+    
+            width:85%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #a93434;
+            border-radius: 5px;
+            position:static;
+        }
+        button{
+            width: 40%;
+            padding: 10px;
+            background: rgb(0, 38, 255);
+            color: rgb(234, 232, 232);
+            border:#a93434;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: rgb(64, 19, 229);
+        }
+        .toggle {
+            margin-top: 10px;
+            color: rgb(234, 234, 234);
+            cursor: pointer;
+        }
+        .typewriter h1 {
+          color: #ffffff;
+          font-family: 'Times New Roman', Times, serif;
+          overflow: hidden; /* Ensures the content is not revealed until the animation */
+          border-right: .15em solid rgb(0, 47, 255); /* The typwriter cursor */
+          white-space: nowrap; /* Keeps the content on a single line */
+          margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+          letter-spacing: .15em; /* Adjust as needed */
+         animation: typing 3.5s steps(30, end),blink-caret .5s step-end infinite;
+         position: relative;
+         top: -40px;
+        }
+        .typewriter h4{
+          color: #ffffff;
+          font-family:inherit;
+          overflow: hidden; /* Ensures the content is not revealed until the animation */
+          border-right: .15em solid rgb(0, 47, 255); /* The typwriter cursor */
+          white-space: nowrap; /* Keeps the content on a single line */
+          margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+          letter-spacing: .25em; /* Adjust as needed */
+         animation: typing 3.5s steps(30, end),blink-caret .5s step-end infinite;
+         position: relative;
+         top: -40px;
+        }
+        @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+        }
+        @keyframes blink-caret {
+       from, to { border-color:transparent; }
+       50% { border-color: rgb(255, 255, 255) }
+       }
+
+  
+    </style>
+</head>
+<body style="
+  background-image:url('https://cdn140.picsart.com/325850149011201.jpg?to=crop&type=webp&r=1456x926&q=85');
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;">
+    <div class="typewriter">
+        <h1> WELLCOM TO JOB SEARCH.</h1>
+        <h4>TRUST OUR WEBSITE GET A JOB</h4>
+    </div>
+     <div class="container" id="authContainer">
+         <h2 id="formTitle">login</h2>
+         <form id="authForm">
+            <i class="fas fa-user"></i>
+            <input type="text" id="nameField" placeholder="Your Name" style="display: none;">
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <button onclick="document.location='http://127.0.0.1:3000/main_page.html'">Login</button>
+         </form>
+         <p class="toggle" onclick="toggleForm()">Don't have an account? Sign Up</p>
+      </div>  
+
+    <script>
+        function toggleForm() {
+            const formTitle = document.getElementById('formTitle');
+            const nameField = document.getElementById('nameField');
+            const submitButton = document.querySelector('button');
+            const toggleText = document.querySelector('.toggle');
+            
+            if (formTitle.innerText === 'Login') {
+                formTitle.innerText = 'Sign Up';
+                nameField.style.display = 'block';
+                submitButton.innerText = 'Sign Up';
+                toggleText.innerText = 'Already have an account? Login';
+            } else {
+                formTitle.innerText = 'Login';
+                nameField.style.display = 'none';
+                submitButton.innerText = 'Login';
+                toggleText.innerText = "Don't have an account? Sign Up";
+            }
+        }
+    </script>
+</body>
+</html>

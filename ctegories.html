@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Categories</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 50px;
+        }
+        .box {
+            width: 250px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            background-color: white;
+            transition: transform 0.3s;
+        }
+        .box:hover {
+            transform: scale(1.05);
+        }
+        .software { background-color: #ffcccb; }
+        .hardware { background-color: #add8e6; }
+        .government { background-color: #90ee90; }
+        h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 14px;
+            color: #333;
+        }
+        .btn {
+            display: inline-block;
+            padding: 8px 15px;
+            margin-top: 10px;
+            border: none;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Job Categories</h1>
+    <div class="container">
+        <div class="box software">
+            <h2>Software Jobs</h2>
+            <p>Find the latest software development jobs in IT, web development, and AI fields.</p>
+            <button class="btn" onclick="openJob('software')">View More</button>
+        </div>
+
+        <div class="box hardware">
+            <h2>Hardware Jobs</h2>
+            <p>Explore jobs related to computer hardware, networking, and chip design.</p>
+            <button class="btn" onclick="openJob('hardware')">View More</button>
+        </div>
+
+        <div class="box government">
+            <h2>Government Jobs</h2>
+            <p>Check out the latest government job openings in various departments.</p>
+            <button class="btn" onclick="openJob('government')">View More</button>
+        </div>
+    </div>
+
+    <script>
+        function openJob(category) {
+            let url = "";
+            if (category === "software") {
+                url = "https://www.naukri.com/software-jobs";  
+            } else if (category === "hardware") {
+                url = "https://www.indeed.com/q-Hardware-jobs.html";  
+            } else if (category === "government") {
+                url = "https://www.sarkariresult.com/";  
+            }
+            window.open(url, "_blank");
+        }
+    </script>
+
+</body>
+</html>
