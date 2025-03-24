@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government Job Notifications</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("https://t4.ftcdn.net/jpg/03/02/96/77/360_F_302967749_eqlKLXCTRrkCCuWj9NdNoNrFYqkZrkCM.jpg");
+            height: 190vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat:no-repeat;
+        }
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            background: #f2f2f2;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgb(4, 4, 4);
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsU41Y0jOw3lttMu4TCEaadptaCSqgDtg3aA&s");
+            height: 168vh;
+            background-size:cover;
+            background-position:center;
+            background-repeat:no-repeat
+        }
+        h1 {
+            text-align: center;
+            text-decoration-line: underline;
+            color: #ffffff;
+        }
+        .job-list {
+            list-style: none;
+
+            padding: 20px;
+        }
+        .job-item {
+            background: #f4f4f4;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .apply-btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .apply-btn:hover {
+            background: #0056b3;
+        }
+        .job-details {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background: #d1ecf1;
+            border-left: 5px solid #17a2b8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Government Job list</h1>
+        <ul class="job-list">
+            <script>
+                let jobs = [
+                    {company: "UPSC Civil Services", location: "India", age: "21-32 years", education: "Graduation", vacancies: "Various", link: "https://www.upsc.gov.in/"},
+                    {company: "SSC CGL", location: "India", age: "18-32 years", education: "Graduation", vacancies: "10,000+", link: "https://ssc.nic.in/"},
+                    {company: "IBPS PO", location: "India", age: "20-30 years", education: "Graduation", vacancies: "4,000+", link: "https://www.ibps.in/"},
+                    {company: "Indian Railways", location: "India", age: "18-33 years", education: "10th/ITI/Diploma", vacancies: "Various", link: "https://www.indianrailways.gov.in/"},
+                    {company: "ISRO Scientist/Engineer", location: "India", age: "Max 35 years", education: "B.E/B.Tech", vacancies: "Various", link: "https://www.isro.gov.in/"},
+                    {company: "DRDO Scientist", location: "India", age: "Max 28 years", education: "B.E/B.Tech", vacancies: "Various", link: "https://www.drdo.gov.in/"},
+                    {company: "BSNL JTO", location: "India", age: "20-30 years", education: "B.E/B.Tech", vacancies: "2,500+", link: "https://www.bsnl.co.in/"},
+                    {company: "LIC AAO", location: "India", age: "21-30 years", education: "Graduation", vacancies: "500+", link: "https://www.licindia.in/"},
+                    {company: "RBI Grade B", location: "India", age: "21-30 years", education: "Graduation", vacancies: "Various", link: "https://www.rbi.org.in/"},
+                    {company: "UPSC Civil Services", location: "India", age: "21-32 years", education: "Graduation", salary: "₹56,100 - ₹2,50,000", vacancies: "Various", link: "https://www.upsc.gov.in/"},
+                    {company: "SSC CGL", location: "India", age: "18-32 years", education: "Graduation", salary: "₹44,900 - ₹1,42,400", vacancies: "10,000+", link: "https://ssc.nic.in/"},
+                    {company: "IBPS PO", location: "India", age: "20-30 years", education: "Graduation", salary: "₹52,000 - ₹55,000", vacancies: "4,000+", link: "https://www.ibps.in/"},
+                    {company: "Indian Railways", location: "India", age: "18-33 years", education: "10th/ITI/Diploma", salary: "₹19,900 - ₹63,200", vacancies: "Various", link: "https://www.indianrailways.gov.in/"},
+                    {company: "ISRO Scientist/Engineer", location: "India", age: "Max 35 years", education: "B.E/B.Tech", salary: "₹84,360 - ₹1,20,000", vacancies: "Various", link: "https://www.isro.gov.in/"}
+    
+                ];
+
+                jobs.forEach((job, index) => {
+                    document.write(`
+                        <li class="job-item">
+                            <strong>${job.company}</strong> - ${job.location}<br>
+                            <button class="apply-btn" onclick="showDetails(${index})">View Details</button>
+                            <div id="job-${index}" class="job-details">
+                                <p><strong>Age Limit:</strong> ${job.age}</p>
+                                <p><strong>Educational Qualification:</strong> ${job.education}</p>
+                                <p><strong>Vacancies:</strong> ${job.vacancies}</p>
+                                <p><a href="${job.link}" target="_blank">Apply Here</a></p>
+                            </div>
+                        </li>
+                    `);
+                });
+            </script>
+        </ul>
+    </div>
+    <script>
+        function showDetails(index) {
+            let details = document.getElementById(`job-${index}`);
+            if (details.style.display === "none" || details.style.display === "") {
+                details.style.display = "block";
+            } else {
+                details.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

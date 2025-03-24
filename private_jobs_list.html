@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Listings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("https://images.pexels.com/photos/3032330/pexels-photo-3032330.jpeg?auto=compress&cs=tinysrgb&w=1200");
+            height: 240vh;
+            background-size: cover;
+            background-position:center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-image: url("https://images.pexels.com/photos/1169754/pexels-photo-1169754.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+            height: 225vh;
+            background-size: cover;
+            background-position:center;
+        }
+        h1 {
+            text-align: center;
+            color: white;
+            text-decoration: underline;
+        }
+        .job-list {
+            list-style: none;
+            padding: 0;
+        }
+        .job-item {
+            background: #e9ecef;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .apply-btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .apply-btn:hover {
+            background: #0056b3;
+        }
+        .job-details {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background: #d1ecf1;
+            border-left: 5px solid #17a2b8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Private jobs list</h1>
+        <ul class="job-list">
+            <script>
+                let jobs = [
+                    {company: "Microsoft", location: "Seattle, WA", experience: "5+ years", skills: "Java, Python, C++"},
+                    {company: "Google", location: "Mountain View, CA", experience: "3+ years", skills: "JavaScript, Go, Python"},
+                    {company: "Amazon", location: "Seattle, WA", experience: "4+ years", skills: "AWS, Java, Python"},
+                    {company: "Apple", location: "Cupertino, CA", experience: "5+ years", skills: "Swift, Objective-C"},
+                    {company: "Facebook", location: "Menlo Park, CA", experience: "4+ years", skills: "React, Node.js, PHP"},
+                    {company: "Netflix", location: "Los Gatos, CA", experience: "3+ years", skills: "Python, JavaScript, AWS"},
+                    {company: "Tesla", location: "Palo Alto, CA", experience: "4+ years", skills: "C++, Embedded Systems"},
+                    {company: "IBM", location: "New York, NY", experience: "5+ years", skills: "AI, Machine Learning, Python"},
+                    {company: "Oracle", location: "Redwood City, CA", experience: "6+ years", skills: "SQL, Java, Cloud Computing"},
+                    {company: "Salesforce", location: "San Francisco, CA", experience: "3+ years", skills: "Apex, Java, JavaScript"},
+                    {company: "Uber", location: "San Francisco, CA", experience: "4+ years", skills: "Java, Kotlin, Swift"},
+                    {company: "Lyft", location: "San Francisco, CA", experience: "3+ years", skills: "Python, Go, JavaScript"},
+                    {company: "Twitter", location: "San Francisco, CA", experience: "4+ years", skills: "Scala, Java, JavaScript"},
+                    {company: "Snapchat", location: "Santa Monica, CA", experience: "3+ years", skills: "C++, JavaScript, Python"},
+                    {company: "Airbnb", location: "San Francisco, CA", experience: "4+ years", skills: "Ruby, React, JavaScript"},
+                    {company: "Dropbox", location: "San Francisco, CA", experience: "5+ years", skills: "Python, JavaScript, Go"},
+                    {company: "Adobe", location: "San Jose, CA", experience: "4+ years", skills: "C++, JavaScript, UX Design"},
+                    {company: "Intel", location: "Santa Clara, CA", experience: "6+ years", skills: "Embedded Systems, C++, VHDL"},
+                    {company: "Nvidia", location: "Santa Clara, CA", experience: "5+ years", skills: "CUDA, C++, AI Development"},
+                    {company: "Cisco", location: "San Jose, CA", experience: "4+ years", skills: "Networking, Python, Java"}
+                ];
+
+                jobs.forEach((job, index) => {
+                    document.write(`
+                        <li class="job-item">
+                            <strong>${job.company}</strong> - ${job.location}<br>
+                            <button class="apply-btn" onclick="showDetails(${index})">View Details</button>
+                            <div id="job-${index}" class="job-details">
+                                <p><strong>Experience:</strong> ${job.experience}</p>
+                                <p><strong>Skills Required:</strong> ${job.skills}</p>
+                                <p><strong>Upload Resume:</strong> <input type="file"></p>
+                            </div>
+                        </li>
+                    `);
+                });
+            </script>
+        </ul>
+    </div>
+    <script>
+        function showDetails(index) {
+            let details = document.getElementById(`job-${index}`);
+            if (details.style.display === "none" || details.style.display === "") {
+                details.style.display = "block";
+            } else {
+                details.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

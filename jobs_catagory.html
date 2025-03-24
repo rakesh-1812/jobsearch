@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Categories</title>
+    <style>
+        body {
+            background-image: url("https://res.allmacwallpaper.com/pic/Thumbnails/20587_728.jpg");
+
+            height: 102vh;
+            background-position:right;
+            background-size:cover;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin-top: 20px;
+            color: #ffffff;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px;
+        }
+        .box {
+            width: 250px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            background-color: rgb(246, 246, 246);
+            transition: transform 0.3s;
+        }
+        .box:hover {
+            transform: scale(1.05);
+        }
+        h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #fffefe;
+        }
+        p {
+            font-size: 15px;
+            color: #ffffff;
+        }
+        .btn {
+            display: inline-block;
+            padding: 8px 15px;
+            margin-top: 10px;
+            border: none;
+            background-color: #007BFF;
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Job Categories</h1>
+    <div class="container">
+        <div class="box" style="background-image: url(software.jpeg); background-size: cover; ;"
+        <h2><h2>software job</h2></h2>
+        <p>find the latest software development jobs in IT ,web development,and AI fields.
+        </p>
+            <button class="btn" onclick="openJob('software')">View More</button>
+        </div>
+
+        <div class="box" style="background-image: url(haredware.jpeg); background-size: cover; ;">
+            <h2>Hardware jobs</h2>
+            <p>Explore jobs related to computer hardware,networking,and chip design.</p>
+            <button class="btn" onclick="openJob('hardware')">View More</button>
+        </div>
+
+        <div class="box" style="background-image: url(business1.jpeg); background-size: cover;">
+            <h2>Business & Finance</h2>
+            <p>Explore jobs in finance, banking, and business management.</p>
+            <button class="btn" onclick="openJob('finance')">View More</button>
+        </div>
+
+        <div class="box" style="background-image: url(Government.jpeg); background-size: cover;">
+            <h2>Government jobs</h2>
+            <p>check out the latest government jobs openings in various departments.</p>
+            <button class="btn" onclick="openJob('government')">View More</button>
+        </div>
+
+        <div class="box" style="background-image: url(IT.jpeg); background-size: cover;">
+            <h2>Technology & IT</h2>
+            <p>Find jobs in software development, cybersecurity, and IT support.</p>
+            <button class="btn" onclick="openJob('technology')">View More</button>
+        </div>
+
+        <div class="box" style="background-image: url(medical.jpeg); background-size: cover;">
+            <h2>Healthcare</h2>
+            <p>Discover jobs in nursing, medicine, and healthcare services.</p>
+            <button class="btn" onclick="openJob('healthcare')">View More</button>
+        </div>
+
+        <div class="box" style="background-image: url(student.jpeg); background-size: cover;">
+            <h2>Education</h2>
+            <p>Teaching, tutoring, and academic research jobs available.</p>
+            <button class="btn" onclick="openjob('education')">View More</button>
+        </div>
+
+        <div class="box" style="background-image: url(Arts\ and\ media.jpeg); background-size: cover;">
+            <h2>Arts & Media</h2>
+            <p>Opportunities in graphic design, film, and journalism.</p>
+            <button class="btn" onclick="openJob('arts')">View More</button>
+        </div>
+
+        <div class="box" style="background-image: url(construction.jpeg); background-size: cover;">
+            <h2>Construction & Engineering</h2>
+            <p>Find jobs in civil engineering, construction, and architecture.</p>
+            <button class="btn" onclick="openJob('engineering')">View More</button>
+        </div>
+
+        <div class="box" style="background-image: url(science.jpeg); background-size: cover;">
+            <h2>Science & Research</h2>
+            <p>Explore research jobs in physics, biology, and chemistry.</p>
+            <button class="btn" onclick="openJob('science')">View More</button>
+        </div>
+
+        <div class="box" style="background-image: url(sales.jpeg); background-size: cover;">
+            <h2>Sales & Marketing</h2>
+            <p>Opportunities in sales, digital marketing, and advertising.</p>
+            <button class="btn" onclick="openJob('sales')">View More</button>
+        </div>
+
+        <div class="box" style="background-image: url(manufacturing.jpeg); background-size: cover;">
+            <h2>Manufacturing</h2>
+            <p>Jobs in production, factory work, and industrial design.</p>
+            <button class="btn" onclick="openJob('manufacturing')">View More</button>
+        </div>
+
+        <div class="box" style="background-image: url(law.jpeg); background-size: cover;">
+            <h2>Legal & Law Enforcement</h2>
+            <p>Careers in law firms, police forces, and legal advising.</p>
+            <button class="btn" onclick="openJob('legal')">View More</button>
+        </div>
+    </div>
+    <script>
+        function openJob(category) {
+            let urls = {
+                "software":"http://127.0.0.1:3000/private_jobs_list.html",
+                "hardware":"http://127.0.0.1:3000/private_jobs_list.html",
+                "government":"http://127.0.0.1:3000/government_jobs_list.html",
+                "finance": "https://www.indeed.com/q-Finance-jobs.html",
+                "technology": "https://www.indeed.com/q-Technology-jobs.html",
+                "healthcare": "https://www.indeed.com/q-Healthcare-jobs.html",
+                "education": "https://www.indeed.com/q-Education-jobs.html",
+                "arts": "https://www.indeed.com/q-Arts-jobs.html",
+                "engineering": "https://www.indeed.com/q-Engineering-jobs.html",
+                "science": "https://www.indeed.com/q-Science-jobs.html",
+                "sales": "https://www.indeed.com/q-Sales-jobs.html",
+                "manufacturing": "https://www.indeed.com/q-Manufacturing-jobs.html",
+                "legal": "https://www.indeed.com/q-Legal-jobs.html"
+            };
+
+            window.open(urls[category], "_blank");
+        }
+    </script>
+
+</body>
+</html>
